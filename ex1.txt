@@ -1,0 +1,1 @@
+SELECT EmployeeId, SupportRepId FROM employees LEFT JOIN customers ON employees.EmployeeId = customers.SupportRepId WHERE SupportRepId Is NULL;
