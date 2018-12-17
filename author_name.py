@@ -84,3 +84,4 @@ if __name__ == "__main__":
 	master.geometry("700x400")
 	app = Author(master)
 	master.mainloop()
+ert = 0
