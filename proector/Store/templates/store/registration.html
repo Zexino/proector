@@ -1,0 +1,37 @@
+{% extends "store/head.html"%}
+
+{% load widget_tweaks %}
+
+{% block content %}
+<div class = "container">
+ <form method = "post">
+ 	{% csrf_token %}
+ 	{% for field in form.visible_fields %}
+ 	  
+ 	<ul>  
+
+ 	<li><label for = "{{field.id_for_label}}">{{ field.label }}</label></li>
+ 	  {% if field.errors %}
+ 			<li>{{ field.errors }}</li>
+ 	  {% endif %}
+ 	<li><i class = "material-icons"></i>{{ field }}</li>
+ 	<li>{{ field.help_text }}</li>
+ 	{% endfor %}
+ 	</ul>
+ 	<button type ="Submit"
+ 	class = "btn btn-outline-info">Зареєструватись</button>
+ 	<p>
+   </p>
+ </form>
+ <p>Якщо ви зареєстровані на даному сайті то нажміть
+ <a onclick = "M.toast({html:'I am a toast'})" class = "btn"><strong>на мене</strong></a></p>
+ {% if messages %}
+ 	{%for message in messages %}
+ 		{% if message.tags == "error"%}
+ 			<script>M.toast({html:'{{message}}', classes : "red rounded", DisplayLenght : 600})</script>
+ 		{% endif %}
+ 	{% endfor %}
+ {% endif %}
+ </div>
+ {% endblock %}
+

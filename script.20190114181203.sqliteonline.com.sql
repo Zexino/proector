@@ -1,0 +1,1 @@
+SELECT t2.FirstName||" "||t2.LastName as employee , t1.FirstName||" "|| t1.LastName AS manager FROM employees t1 INNER JOIN employees t2 ON t1.EmployeeId = t2.ReportsTo;

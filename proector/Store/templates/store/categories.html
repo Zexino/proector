@@ -1,0 +1,24 @@
+{% extends "store/head.html"%}
+
+{% block content %}
+
+<div class = "row">
+
+	{% for c in cat %}
+
+	
+	<div class = "col s12 l4">
+		<a href = "{{c.url_slug}}" style = "color : #000000">
+		<div class = "card hoverable">
+			<div class = "card_content">
+				<div class = "card-title">
+					{{c.categoty_name}}
+				</div>
+				<p>{{c.category_summury}}</p>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+
+{% endblock %}
