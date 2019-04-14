@@ -20,8 +20,8 @@ class Product(models.Model):
     publishe_date = models.DateTimeField("date published")
     price = models.DecimalField(max_digits=9,decimal_places=2)
     url_slug = models.CharField(max_length = 31, null = False, default = "default")
-    news_category = models.ForeignKey(Categories, 
-        on_delete = models.SET_DEFAULT, default = 1)
+    news_category = models.ManyToManyField(Categories)
+        
     image = models.ImageField(upload_to = 'img/', blank = True, null = True)
     def __str__(self):
         return "Post tittle: %s" %(self.tittle)
