@@ -52,7 +52,17 @@
                                               dist:0,
                                               fullWidth:true,
                                               padding:50});
+
        });
+
+      function func(instance) {
+        instance.next();
+        }
+
+      var elem = document.querySelector('.carousel-item'); 
+      var instance = M.Carousel.getInstance(elem);
+      
+      setTimeout(func, 1000, instance);
     </script>
 
     <!--<script type="text/javascript">
