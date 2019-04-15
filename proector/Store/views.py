@@ -18,7 +18,14 @@ def show_categories(request):
 def separator(request, url_slug):
 	categories_urls = [c.url_slug for c in Categories.objects.all()]
 	if url_slug in categories_urls:
-		posts = Product.objects.filter(news_caregory__url_slug = url_slug)
+		posts = Product.objects.filter(news_category__url_slug = url_slug)
+		return render(request, "store/s_category.html",{'posts': posts})
+
+	if url_slug in [c.url_slug for c in Product.objects.all()]:	
+		game = Product.objects.get(url_slug = url_slug)
+		return render(request, "store/s_games.html",{'game': game})
+
+
 	return HttpResponse("Not a category")
 
 def _Registration(request):

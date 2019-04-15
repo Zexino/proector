@@ -59,7 +59,7 @@
         instance.next();
         }
 
-      var elem = document.querySelector('.carousel-item'); 
+      var elem = document.querySelector('.carousel.carousel-slider.center'); 
       var instance = M.Carousel.getInstance(elem);
       
       setTimeout(func, 1000, instance);
@@ -90,7 +90,7 @@
         <div class="card-action">
           
           </div>
-          <a href="{{n.url_slug}}">Buy more games</a>
+          <a href="/{{n.url_slug}}">Buy more games</a>
         </div>
       </div>
     
