@@ -49,6 +49,10 @@ class CartItem(models.Model):
         self.save()
 
 class Like(models.Model):
-    user = models.ForeignKey(User, on_delete = models.SET_NULL, related_name = 'user', null = True)
-    liked = models.ForeignKey(Product, on_delete = models.CASCADE, related_name = 'liked')
+    user = models.ForeignKey(User, on_delete = models.SET_NULL, null = True)
+    liked = models.ForeignKey(Product, on_delete = models.CASCADE)
 
+
+class DisLike(models.Model):
+    user = models.ForeignKey(User, on_delete = models.SET_NULL, null = True)
+    disliked = models.ForeignKey(Product, on_delete = models.CASCADE)

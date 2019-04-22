@@ -1,13 +1,32 @@
 {% extends "store/head.html"%}
 
 {% block content %}
-
+<br>
 <div class="container">
+	
+		<h2 class = "header">{{game.tittle}}</h2>
+		<hr align="center" size="2" color="#ff0000" />
+		<br>
+		
+	<div class="row">
 
-	<h2>{{game.tittle}}</h2>
+	
+	<div class="col l4">
+	
+	<img src = '{{game.image.url}}' height = 450, width = 300>
+	
+	</div>
+	<div class="col l8">
+		<div class = "card">
+		<div class="card-content">
 
-	<img src = '{{game.image.url}}'>
+	<h3> Date published: {{game.date|date:'Y-m-d'}}</h3>
 
+	<a class="btn-floating btn-large waves-effect waves-light blue lighten-2" href = "?like=1"><i class="material-icons">thumb_up</i></a>
+	<a class="btn-floating btn-large waves-effect waves-black red lighten-2"  href = "?like=0"><i class="material-icons">thumb_down</i></a>
+		</div>
+		</div>
+	</div>
 </div>    
 
 

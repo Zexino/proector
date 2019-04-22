@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Product, Categories
+from .models import Product, Categories, Like, DisLike
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login , logout, authenticate
 from django.contrib import messages
@@ -23,6 +23,13 @@ def separator(request, url_slug):
 
 	if url_slug in [c.url_slug for c in Product.objects.all()]:	
 		game = Product.objects.get(url_slug = url_slug)
+		if request.GET.get('like'):
+			if request.user.is_authenticated:
+				if request.GET.get('like')=="1":
+					Like.objects.update_or_create(user=request.user, liked=game) 
+				if request.GET.get('like')=="0":
+					DisLike.objects.update_or_create(user=request.user, disliked=game)
+
 		return render(request, "store/s_games.html",{'game': game})
 
 
