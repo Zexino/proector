@@ -29,8 +29,20 @@ def separator(request, url_slug):
 					Like.objects.update_or_create(user=request.user, liked=game) 
 				if request.GET.get('like')=="0":
 					DisLike.objects.update_or_create(user=request.user, disliked=game)
+		like_count = Like.objects.filter(liked=game).count()
+		dislike_count = DisLike.objects.filter(disliked=game).count()
+		try:
+			likedis = like_count + dislike_count
+			like_percent = round((like_count / likedis) * 100)
+			dislike_percent = 100 - like_percent
+		except ZeroDivisionError:
+			return render(request, "store/s_games.html",{'game': game})
 
-		return render(request, "store/s_games.html",{'game': game})
+
+
+
+		return render(request, "store/s_games.html",{'game': game, 
+			                                         'like_per':like_percent})
 
 
 	return HttpResponse("Not a category")

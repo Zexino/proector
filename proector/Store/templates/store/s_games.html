@@ -5,7 +5,7 @@
 <div class="container">
 	
 		<h2 class = "header">{{game.tittle}}</h2>
-		<hr align="center" size="2" color="#ff0000" />
+		<hr align = "center" size="2" color="#ff0000" />
 		<br>
 		
 	<div class="row">
@@ -24,6 +24,15 @@
 
 	<a class="btn-floating btn-large waves-effect waves-light blue lighten-2" href = "?like=1"><i class="material-icons">thumb_up</i></a>
 	<a class="btn-floating btn-large waves-effect waves-black red lighten-2"  href = "?like=0"><i class="material-icons">thumb_down</i></a>
+	{% if like_per%}
+	<div class="progress red">
+      <div class="determinate blue" style="width: {{like_per}}%"></div>
+
+     {% else %}
+            <script>M.toast({html:'Noone has left a response yet!', classes : "red rounded", DisplayLenght : 600})</script> 
+     {% endif %} 
+    </div>
+      <h3>Price: {{game.price}}</h3>
 		</div>
 		</div>
 	</div>

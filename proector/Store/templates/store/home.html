@@ -75,16 +75,17 @@
 {%for n in News%}
 
        <div class="col s12 m7 l6">
-    <h2 class="header">{{n.tittle}}</h2>
+    
     
     <div class="card horizontal">
         <div class="card-image">
         {% if n.image%}
-        <img src="{{n.image.url}}" height = 250, width = 200>
+        <img src="{{n.image.url}}" height = 240, width = 200>
         {%endif%}
       </div>
       <div class="card-stacked">
         <div class="card-content">
+          <h4 class="header">{{n.tittle}}</h4>
           <p>{{ n.text|safe|truncatewords:40}}...</p>
         </div>
         <div class="card-action">

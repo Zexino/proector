@@ -6,18 +6,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified JavaScript -->
+    <style>
+     body{
+        background-image: url('/media/img/back.jpg');
+        background-size: cover;
+     }
+   </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
   <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo center #00bcd4 cyan">「Enter_generic_name_here」</a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><a href="/">Home</a></li>
+        <li><a href = "/categories/">Tags</a></li>
       {% if user.is_authenticated %}
         <li><a href="/logout/">logout</a></li>
         
       {% else %}
         <li><a href="/registration/">Registration</a></li>
         <li><a href="/login/">login</a></li>
+
       {% endif %}
         
       </ul>
@@ -25,3 +33,4 @@
   </nav>
 {% block content %}
 {%endblock%}
+
