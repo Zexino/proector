@@ -7,13 +7,14 @@
 	{% for c in cat %}
 
 	
-	<div class = "col s12 l4">
-		<a href = "{{c.url_slug}}" style = "color : #000000">
+	<div class = "col s12 l2">
+		<a href = "/{{c.url_slug}}" style = "color : #000000">
 		<div class = "card hoverable">
 			<div class = "card_content">
 				<div class = "card-title">
-					{{c.categoty_name}}
+					{{c.category_name}}
 				</div>
+
 				<p>{{c.category_summury}}</p>
 			</div>
 		</div>

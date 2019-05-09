@@ -7,8 +7,8 @@ from django.contrib import messages
 from .forms import NewUserForm
 
 def buy_Skyrim(request):
-	return HttpResponse("""<h1>This is America</h1>
-							<a href ="https://steamcommunity.com/profiles/76561198269458856">a</a>""")
+	return HttpResponse("""<h1>DEMO VERSION!!!</h1>
+							<a href ="http://127.0.0.1:8000/shop/">Shop</a>""")
 def Bethesda(request):
 		return render(request, "store/home.html", {'News' : Product.objects.all})
 
