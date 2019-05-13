@@ -22,8 +22,8 @@
 
 	<h3> Date published: {{game.date|date:'Y-m-d'}}</h3>
 
-	<a class="btn-floating btn-large waves-effect waves-light blue lighten-2" href = "?like=1"><i class="material-icons">thumb_up</i></a>
-	<a class="btn-floating btn-large waves-effect waves-black red lighten-2"  href = "?like=0"><i class="material-icons">thumb_down</i></a>
+	<a class = "btn-floating btn-large waves-effect waves-light blue lighten-2" href = "?like=1"><i class="material-icons">thumb_up</i></a>
+	<a class = "btn-floating btn-large waves-effect waves-black red lighten-2"  href = "?like=0"><i class="material-icons">thumb_down</i></a>
 	{% if like_per%}
 	<div class="progress red">
       <div class="determinate blue" style="width: {{like_per}}%"></div>
@@ -33,6 +33,8 @@
      {% endif %} 
     </div>
       <h3>Price: {{game.price}}</h3>
+      <h3>Buy {{game.tittle}}: <a class = "btn-floating btn-large waves-effect waves-light green darken-2"><i class="material-icons">add_shopping_cart</i></a> </h3>
+      
 		</div>
 		</div>
 	</div>

@@ -22,6 +22,7 @@ app_name = 'Store'
 urlpatterns = [
     path('', views.buy_Skyrim, name = 'home'),
     path('shop/',views.Bethesda, name = 'gone'),
+    path("cart/",views.buying_cart, name = 'cart'),
     path("customer/<int:number>", views.Ubisoft, name = 'Ubisoft'),
     path("registration/", views._Registration, name = '_registration' ),
     path("logout/", views.logout_),
