@@ -31,7 +31,7 @@ class CartItem(models.Model):
     date_added = models.DateTimeField(auto_now_add = True)
     quantity = models.IntegerField(default = 1)
     product = models.ForeignKey(Product, on_delete = models.CASCADE, unique = False)
-    user = models.ForeignKey(User, on_delete = models.CASCADE, unique = False)
+    user = models.ForeignKey(User, on_delete = models.CASCADE, unique = False, default=1)
 
     class Meta:
         db_table = 'cart_items'

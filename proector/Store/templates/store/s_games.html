@@ -4,7 +4,7 @@
 <br>
 <div class="container">
 	
-		<h2 class = "header">{{game.tittle}}</h2>
+		<h2 class = "header white-text">{{game.tittle}}</h2>
 		<hr align = "center" size="2" color="#ff0000" />
 		<br>
 		
@@ -33,8 +33,14 @@
      {% endif %} 
     </div>
       <h3>Price: {{game.price}}</h3>
-      <h3>Buy {{game.tittle}}: <a class = "btn-floating btn-large waves-effect waves-light green darken-2"><i class="material-icons">add_shopping_cart</i></a> </h3>
-      
+      <h3>Buy {{game.tittle}}: 
+
+      	               <form id="buy" action="/cart/" method="POST">
+      	               	      {% csrf_token %}
+      	                      <input type = "hidden" name = "produt_id" value = "{{game.id}}"/><br />
+      	<a class = "btn-floating btn-large waves-effect waves-light green darken-2"
+      	  onclick="document.getElementById('buy').submit()"><i class ="material-icons">add_shopping_cart</i></a> </h3>
+                       </form>
 		</div>
 		</div>
 	</div>

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Product, Categories, Like, DisLike
+from .models import Product, Categories, Like, DisLike, CartItem
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login , logout, authenticate
 from django.contrib import messages
@@ -84,4 +84,9 @@ def Ubisoft(request, number):
 	return HttpResponse("""<h1>Lol you are %s</h1>""" % number)
 
 def buying_cart(request):
-	qwe = 0
+	if request.method =="POST":
+		user = request.user
+		product = request.POST.get('product_id')
+		CartItem.objects.update_or_create(product = product, user = user)
+		products = [item for item in user.cartitem_set.all()]
+		return render(request, "store/s_cart.html",{"user" : user, "products" : products})	
