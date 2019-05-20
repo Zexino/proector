@@ -86,7 +86,10 @@ def Ubisoft(request, number):
 def buying_cart(request):
 	if request.method =="POST":
 		user = request.user
-		product = request.POST.get('product_id')
+		p= request.POST.get('product_id')
+		print (p)
+		product_id =int(p)
+		product = Product.objects.get(id=product_id)
 		CartItem.objects.update_or_create(product = product, user = user)
 		products = [item for item in user.cartitem_set.all()]
 		return render(request, "store/s_cart.html",{"user" : user, "products" : products})	
