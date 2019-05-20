@@ -10,12 +10,12 @@
  	  
  	<ul>  
 
- 	<li><label for = "{{field.id_for_label}}">{{ field.label }}</label></li>
+ 	<li><label for = "{{field.id_for_label}}" class ="grey-text">{{ field.label }}</label></li>
  	  {% if field.errors %}
  			<li>{{ field.errors }}</li>
  	  {% endif %}
  	<li><i class = "material-icons"></i>{{ field }}</li>
- 	<li>{{ field.help_text }}</li>
+ 	<li class ="white-text">{{ field.help_text }}</li>
  	{% endfor %}
  	</ul>
  	<button type ="Submit"
@@ -23,7 +23,7 @@
  	<p>
    </p>
  </form>
- <p>Якщо ви зареєстровані на даному сайті то нажміть
+ <p class ="white-text">Якщо ви зареєстровані на даному сайті то нажміть
  <a href = "/shop/" onclick = "M.toast({html:'Youre arent'})" class = "btn"><strong>на мене</strong></a></p>
  {% if messages %}
  	{%for message in messages %}

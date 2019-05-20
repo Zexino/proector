@@ -3,8 +3,8 @@
 
 <scrit scr = "{% static '/tinymce/js/prism/js' %}"></scrit>
  <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified JavaScript -->
     <style>
      body{
@@ -15,16 +15,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
   <nav>
     <div class="nav-wrapper">
-      <a href="/shop/" class="brand-logo center">  Kaufen  </a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="/">Home</a></li>
+      <a href="/shop/" class = "brand-logo center">  Kaufen  </a>
+      <ul id="nav-mobile" class = "left hide-on-med-and-down">
+        <li><a href = "/">Home</a></li>
         <li><a href = "/categories/">Tags</a></li>
       {% if user.is_authenticated %}
-        <li><a href="/logout/">logout</a></li>
+        <li><a href = "/logout/">logout</a></li>
+        <li><a href = "/cart/">Cart</a></li>
         
       {% else %}
-        <li><a href="/registration/">Registration</a></li>
-        <li><a href="/login/">login</a></li>
+        <li><a href = "/registration/">Registration</a></li>
+        <li><a href = "/login/">login</a></li>
 
       {% endif %}
         
@@ -33,25 +34,25 @@
   </nav>
 {% block content %}
 {%endblock%}
-<footer class="page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Demo version 0.1.1</h5>
-                <p class="grey-text text-lighten-4">This site is not yet finished! Our SFK team is currently working on it.</p>
+<footer class = "page-footer">
+          <div class = "container">
+            <div class = "row">
+              <div class = "col l6 s12">
+                <h5 class = "white-text">Demo version 0.1.1</h5>
+                <p class = "grey-text text-lighten-4">This site is not yet finished! Our SFK team is currently working on it.</p>
               </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Sponsorship</h5>
+              <div class = "col l4 offset-l2 s12">
+                <h5 class = "white-text">Sponsorship</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Speedwagon foundation</a></li>
+                  <li><a class = "grey-text text-lighten-3" href = "#!">Speedwagon foundation</a></li>
                 </ul>
               </div>
             </div>
           </div>
-          <div class="footer-copyright">
-            <div class="container">
+          <div class = "footer-copyright">
+            <div class = "container">
             © 2019 Zexino
-            <a class="grey-text text-lighten-4 right" href="#!">All rights reserved</a>
+            <a class = "grey-text text-lighten-4 right" href = "#!">All rights reserved</a>
             </div>
           </div>
         </footer>

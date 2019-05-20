@@ -42,7 +42,7 @@ def separator(request, url_slug):
 			                                         'like_per':like_percent})
 
 
-	return HttpResponse("Not a category")
+	return HttpResponse("Error 404")
 
 def _Registration(request):
 	if request.method == "POST":
@@ -84,12 +84,14 @@ def Ubisoft(request, number):
 	return HttpResponse("""<h1>Lol you are %s</h1>""" % number)
 
 def buying_cart(request):
+	user = request.user
 	if request.method =="POST":
-		user = request.user
-		p= request.POST.get('product_id')
-		print (p)
-		product_id =int(p)
-		product = Product.objects.get(id=product_id)
+		p = request.POST.get('product_id')
+		product_id = int(p)
+		product = Product.objects.get(id = product_id)
 		CartItem.objects.update_or_create(product = product, user = user)
 		products = [item for item in user.cartitem_set.all()]
-		return render(request, "store/s_cart.html",{"user" : user, "products" : products})	
+		
+	else:
+		products = [item for item in user.cartitem_set.all()]
+	return render(request, "store/s_cart.html",{"user" : user, "products" : products})	

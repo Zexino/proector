@@ -1,13 +1,31 @@
 {% extends "store/head.html"%}
 {% load static %}
 {% block content %}
-<div class="row">
-	<div class="col l2"></div>
+<br>
+<h2 class = "white-text">Your cart:</h2>
+<br>
+
+	
     {%for item in products%}
-	<div class="col l6"><h1>{{item.tittle}}</h1></div>
+    <div class="row">
+    <div class="container">
+	    <div class="col l12 #81d4fa light-blue lighten-3"><h4><img src = '{{item.product.image.url}}' height = 70, width = 50>     {{item.product.tittle}} {{item.product.price}}</h4></div>
+    </div>
+    <br> <br>
+    </div>
     {%endfor%}
-	<div class="col l3"></div>
-</div>
+	
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 {% endblock %}
