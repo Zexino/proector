@@ -85,6 +85,8 @@ def Ubisoft(request, number):
 
 def buying_cart(request):
 	user = request.user
+	if user.is_authenticated==False :
+		return redirect(request.META['HTTP_REFERER'])
 	if request.method =="POST":
 		p = request.POST.get('product_id')
 		product_id = int(p)
